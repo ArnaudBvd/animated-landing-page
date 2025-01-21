@@ -4,7 +4,8 @@
     --color-background: #121212;
     --color-primary: #ffbe08;
     --color-light: #d3d3d3;
-    --color-text: #fff;
+    --color-text-light: #fff;
+    --color-text-dark: #333333;
 
     --transition: all 0.5s ease;
 }
@@ -18,7 +19,7 @@
 
 body {
     background-color: var(--color-background);
-    color: var(--color-text);
+    color: var(--color-text-light);
 }
 
 
@@ -31,10 +32,12 @@ header {
     padding: 0 3rem;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 100;
 }
 
 .logo {
-   width: 4rem; 
+   width: 3.5rem; 
 }
 
 .search-box {
@@ -80,4 +83,97 @@ nav a {
 
 nav a:hover {
     color: var(--color-primary);
+}
+
+
+/* ************ HEADER ************ */
+.carousel {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    margin-top: -4.5rem;
+}
+
+.carousel .list .item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.carousel .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .list .item .content {
+    position: absolute;
+    top: 10%;
+    width: 71rem;
+    max-height: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-wrap: nowrap;
+    margin: 2rem 0;
+}
+
+.details {
+    display: flex;
+    text-wrap: nowrap;
+    margin-bottom: -1.2rem;
+}
+
+.details p {
+    border-right: 2px solid #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: 0 0.6rem;
+}
+
+.details p:last-child {
+    border: none;
+}
+
+.content h4 {
+    max-width: 25rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin: 3rem 0;
+}
+
+.carousel .buttons {
+    display: flex;
+}
+
+.test-btn {
+    width: 9.2rem;
+    padding: 0.7rem 0;
+    font-weight: bold;
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 1.2rem;
+    margin-right: 0.6rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    opacity: 0.7;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
