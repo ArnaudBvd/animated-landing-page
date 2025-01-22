@@ -177,3 +177,18 @@ nav a:hover {
     opacity: 0.7;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
+
+.vid-box {
+    border: 5px solid var(--color-primary);
+    width: 15.5rem;
+    height: 8.75rem;
+    border-radius: 0.6rem;
+    margin-top: 6.25rem;
+    overflow: hidden;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.vid-box video {
+    width: 15.5rem;
+    height: 8.75rem;
+}
