@@ -159,7 +159,7 @@ nav a:hover {
     display: flex;
 }
 
-.test-btn {
+.test-btn, .trailer-btn {
     width: 9.2rem;
     padding: 0.7rem 0;
     font-weight: bold;
