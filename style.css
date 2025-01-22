@@ -243,3 +243,35 @@ nav a:hover {
     font-weight: bold;
     margin: 0; 
 }
+
+
+/* ************ ARROWS ************ */
+.arrows {
+    position: absolute;
+    top: 80%;
+    right: 40%;
+    z-index: 100;
+    width: 18.75rem;
+    max-width: 30%;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.arrows button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-light);
+    color: var(--color-text-dark);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.arrows button:hover {
+    color: var(--color-primary);
+    background-color: var(--color-text-dark);
+    box-shadow: 0 0 15px grba(0, 0, 0, 0.6);
+}
