@@ -256,6 +256,7 @@ nav a:hover {
     display: flex;
     gap: 0.6rem;
     align-items: center;
+    margin-right: 4rem;
 }
 
 .arrows button {
@@ -274,4 +275,104 @@ nav a:hover {
     color: var(--color-primary);
     background-color: var(--color-text-dark);
     box-shadow: 0 0 15px grba(0, 0, 0, 0.6);
+}
+
+
+/* ************ ANIMATION ************ */
+.carousel .list .item:nth-child(1) {
+    z-index: 1;
+}
+
+
+/* ************ ANIMATION FOR CONTENT ************ */
+
+/* Animation qui permet au contenu d'apparaître en douceur*/
+.carousel .list .item:nth-child(1) .content {
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to {
+       filter: blur(0);
+       opacity: 1; 
+    }
+}
+
+
+/* ************ ANIMATION WHEN NEXT CLICK ************ */
+
+/* Animation qui donne l'impression que la première image de la vignette s'agrandit et effectue une transition transparente pour remplacer la gande image affichée */
+.carousel.next .list .item:nth-child(1) img {
+    width: 9.3rem;
+    height: 13.75px;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    border-radius: 100%;
+    animation: showImage .5s linear 1 forwards;
+}
+
+@keyframes showImage {
+    to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+
+/* Animation pour les vignettes pour la déplacer de droite à gauche en lui donnant un aspect dynamique */
+.carousel.next .thumbnail {
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext {
+    from {
+        transform: translateX(150px);
+    }
+}
+
+
+/* ************ PREV CLICK ************ */
+.carousel.prev .list .item:nth-child(2) {
+    z-index: 200;
+}
+
+.carousel.prev .list .item:nth-child(2) img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outFrame 0.5s linear 1 forwards;
+}
+
+@keyframes outFrame {
+    to {
+        width: 9.3rem;
+        height: 13.75rem;
+        bottom: 3rem;
+        left: 50%;
+        border-radius: 3rem;
+    }
+}
+
+.carousel.prev .list .item:nth-child(2) .content {
+    animation: contentOut 1.5s linear 1 forwards;
+}
+
+@keyframes contentOut {
+    to {
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+
+/* Prévenir qu'un autre bouton puisse être appuyé pendant le processus d'animation */
+.carousel.next .arrows button,
+.carousel.prev .arrows button {
+    pointer-events: none;
 }
